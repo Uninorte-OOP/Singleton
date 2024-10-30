@@ -12,8 +12,8 @@ public final class Singleton {
     
     private static Singleton instance;
     
-    public int value;
-    public String data;
+    private int value;
+    private String data;
     
     private Singleton(int value, String data) {
         this.value = value;
