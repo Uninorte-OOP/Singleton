@@ -4,7 +4,9 @@
  */
 package main;
 
-import core.base.unsafe.Singleton;
+import core.app.modules.AuthModule;
+import core.app.modules.PaymentModule;
+import core.app.modules.UIModule;
 
 /**
  *
@@ -13,14 +15,27 @@ import core.base.unsafe.Singleton;
 public class Main {
     
     public static void main(String[] args) {
-        Singleton singleton1 = Singleton.getInstance();
-        System.out.println("Singleton 1: " + singleton1);
+        AuthModule auth = new AuthModule();
+        PaymentModule payment = new PaymentModule();
+        UIModule ui = new UIModule();
         
-        Singleton singleton2 = Singleton.getInstance();
-        System.out.println("Singleton 2: " + singleton2);
+        auth.register();
+        auth.register();
+        auth.login();
         
-        Singleton singleton3 = Singleton.getInstance();
-        System.out.println("Singleton 3: " + singleton3);
+        payment.pay();
+        
+        ui.actionPerformed();
+        ui.actionPerformed();
+        
+        auth.register();
+        
+        ui.actionPerformed();
+        
+        payment.pay();
+        payment.pay();
+        
+        auth.login();
     }
     
 }
